@@ -62,9 +62,10 @@ COPY root /
 
 RUN set -ex \
  && cd /var/www/wallabag \
- && sed -i 's/graby": "^2.0"/graby": "^2"/g' composer.json \
  && SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist --no-progress \
  && chown -R nobody:nobody /var/www/wallabag
+ 
+#&& sed -i 's/graby": "^2.0"/graby": "^2"/g' composer.json \
 
 EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
