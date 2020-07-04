@@ -60,6 +60,12 @@ RUN set -ex \
 
 COPY root /
 
+
+RUN set -ex \
+ && cd /var/www/wallabag \
+ && SYMFONY_ENV=prod composer install --no-dev --prefer-dist --no-progress \
+ && chown -R nobody:nobody /var/www/wallabag
+
 RUN set -ex \
  && cd /var/www/wallabag \
  && SYMFONY_ENV=prod composer install --no-dev -o --prefer-dist --no-progress \
