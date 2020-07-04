@@ -42,6 +42,9 @@ parameters:
     fosuser_registration: true
     fosuser_confirmation: true
 
+    fos_oauth_server_access_token_lifetime: 3600
+    fos_oauth_server_refresh_token_lifetime: 1209600
+ 
     from_email: no-reply@wallabag.org
 
     rss_limit: 50
